@@ -6,10 +6,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.openWindow) private var openWindow
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("ScanBar Menu")
-                .font(.headline)
+        VStack(alignment: .leading, spacing: 0) {
+            Button("Configuration…") {
+                NSApp.activate(ignoringOtherApps: true)
+                openWindow(id: "settings")
+            }
 
             Divider()
 
@@ -17,8 +21,8 @@ struct ContentView: View {
                 NSApplication.shared.terminate(nil)
             }
         }
-        .padding()
-        .frame(width: 160)
+        .padding(8)
+        .frame(width: 180)
     }
 }
 

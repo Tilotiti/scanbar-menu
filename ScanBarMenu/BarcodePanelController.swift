@@ -13,14 +13,20 @@ final class BarcodePanelController: NSObject {
     private var clickMonitor: Any?
 
     func showBarcode(_ value: String) {
-        // Validation : n'afficher que si la génération Code-128 réussit
-        guard BarcodeGenerator.generateCode128(from: value) != nil else { return }
+        let settings = AppSettings.shared
+        guard BarcodeGenerator.generate(
+            from: value,
+            format: settings.format,
+            width: settings.width,
+            height: settings.height
+        ) != nil else { return }
 
         if let panel = panel, panel.isVisible {
             guard value != currentValue else { return }
             currentValue = value
             hostingView?.rootView = BarcodePanelView(
                 value: value,
+                settings: AppSettings.shared,
                 onClose: { [weak self] in self?.hide() }
             )
             panel.orderFrontRegardless()
@@ -58,13 +64,17 @@ final class BarcodePanelController: NSObject {
     private func createAndShowPanel(value: String) {
         let contentView = BarcodePanelView(
             value: value,
+            settings: AppSettings.shared,
             onClose: { [weak self] in self?.hide() }
         )
         let hostingView = NSHostingView(rootView: contentView)
         self.hostingView = hostingView
 
+        let settings = AppSettings.shared
+        let panelWidth: CGFloat = max(360, settings.width + 80)
+        let panelHeight: CGFloat = max(200, settings.height + 120)
         let panel = NSPanel(
-            contentRect: NSRect(x: 0, y: 0, width: 460, height: 200),
+            contentRect: NSRect(x: 0, y: 0, width: panelWidth, height: panelHeight),
             styleMask: [.borderless, .nonactivatingPanel],
             backing: .buffered,
             defer: true

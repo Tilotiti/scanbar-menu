@@ -17,5 +17,13 @@ struct ScanBarMenuApp: App {
         } label: {
             Image(systemName: "barcode.viewfinder")
         }
+
+        Window("Configuration", id: "settings") {
+            SettingsView(settings: AppSettings.shared)
+                .frame(minWidth: 400, minHeight: 380)
+        }
+        .windowResizability(.contentSize)
+        .defaultSize(width: 400, height: 380)
+        .defaultPosition(.center)
     }
 }

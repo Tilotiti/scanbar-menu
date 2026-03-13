@@ -7,6 +7,7 @@ import SwiftUI
 
 struct BarcodePanelView: View {
     let value: String
+    let settings: AppSettings
     let onClose: () -> Void
 
     var body: some View {
@@ -27,16 +28,21 @@ struct BarcodePanelView: View {
                 .buttonStyle(.plain)
             }
 
-            if let image = BarcodeGenerator.generateCode128(from: value) {
+            if let image = BarcodeGenerator.generate(
+                from: value,
+                format: settings.format,
+                width: settings.width,
+                height: settings.height
+            ) {
                 Image(nsImage: image)
                     .interpolation(.none)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(maxHeight: 90)
+                    .frame(maxWidth: settings.width + 16, maxHeight: settings.height + 16)
                     .padding(.horizontal, 8)
             }
 
-            Text("Code-128")
+            Text(settings.format.rawValue)
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
@@ -46,6 +52,6 @@ struct BarcodePanelView: View {
 }
 
 #Preview {
-    BarcodePanelView(value: "1234567890128", onClose: {})
+    BarcodePanelView(value: "1234567890128", settings: AppSettings.shared, onClose: {})
         .frame(width: 320, height: 120)
 }
