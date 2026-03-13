@@ -3,6 +3,8 @@
 //  ScanBarMenu
 //
 
+import AppKit
+import AppKit
 import Foundation
 
 /// Format de code-barres ou QR proposé à l'utilisateur.
@@ -44,6 +46,8 @@ final class AppSettings: ObservableObject {
         static let format = "barcodeFormat"
         static let width = "barcodeWidth"
         static let maxCharacterCount = "maxCharacterCount"
+        static let panelOriginX = "panelOriginX"
+        static let panelOriginY = "panelOriginY"
     }
 
     @Published var format: BarcodeFormat {
@@ -61,6 +65,25 @@ final class AppSettings: ObservableObject {
     @Published var maxCharacterCount: Int {
         didSet {
             defaults.set(maxCharacterCount, forKey: Keys.maxCharacterCount)
+        }
+    }
+
+    /// Position de la fenêtre du code-barres (persistée).
+    var panelOrigin: NSPoint? {
+        get {
+            let x = defaults.double(forKey: Keys.panelOriginX)
+            let y = defaults.double(forKey: Keys.panelOriginY)
+            guard x != 0 || y != 0 else { return nil }
+            return NSPoint(x: x, y: y)
+        }
+        set {
+            if let p = newValue {
+                defaults.set(p.x, forKey: Keys.panelOriginX)
+                defaults.set(p.y, forKey: Keys.panelOriginY)
+            } else {
+                defaults.removeObject(forKey: Keys.panelOriginX)
+                defaults.removeObject(forKey: Keys.panelOriginY)
+            }
         }
     }
 
