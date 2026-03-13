@@ -25,5 +25,13 @@ struct ScanBarMenuApp: App {
         .windowResizability(.contentSize)
         .defaultSize(width: 400, height: 380)
         .defaultPosition(.center)
+
+        Window(String(localized: "À propos"), id: "about") {
+            AboutView()
+                .frame(minWidth: 360, minHeight: 400)
+        }
+        .windowResizability(.contentSize)
+        .defaultSize(width: 360, height: 400)
+        .defaultPosition(.center)
     }
 }

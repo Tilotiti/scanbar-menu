@@ -15,6 +15,11 @@ struct ContentView: View {
                 openWindow(id: "settings")
             }
 
+            Button(String(localized: "À propos")) {
+                NSApp.activate(ignoringOtherApps: true)
+                openWindow(id: "about")
+            }
+
             Divider()
 
             Button("Quitter") {
