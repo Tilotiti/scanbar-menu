@@ -17,7 +17,7 @@ struct SettingsView: View {
         Form {
             // Format
             Section {
-                Picker("Format", selection: Binding(
+                Picker(String(localized: "Format"), selection: Binding(
                     get: { settings.format },
                     set: { settings.format = $0 }
                 )) {
@@ -27,7 +27,7 @@ struct SettingsView: View {
                 }
                 .pickerStyle(.menu)
             } header: {
-                Text("Format d'affichage")
+                Text(String(localized: "Format d'affichage"))
             }
 
             // Largeur
@@ -47,7 +47,7 @@ struct SettingsView: View {
                         .frame(width: 60, alignment: .trailing)
                 }
             } header: {
-                Text("Largeur (px)")
+                Text(String(localized: "Largeur (px)"))
             }
 
             // Limite de caractères
@@ -70,7 +70,7 @@ struct SettingsView: View {
                         .frame(width: 40, alignment: .trailing)
                 }
             } header: {
-                Text("Limite de caractères max")
+                Text(String(localized: "Limite de caractères max"))
             } footer: {
                 Text(String(localized: "Max recommandé pour \(settings.format.rawValue) : \(settings.format.recommendedMaxLength)"))
             }

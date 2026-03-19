@@ -18,7 +18,7 @@ struct ScanBarMenuApp: App {
             Image(systemName: "barcode.viewfinder")
         }
 
-        Window("Configuration", id: "settings") {
+        Window(String(localized: "Configuration"), id: "settings") {
             SettingsView(settings: AppSettings.shared)
                 .frame(minWidth: 400, minHeight: 380)
         }
@@ -32,6 +32,13 @@ struct ScanBarMenuApp: App {
         }
         .windowResizability(.contentSize)
         .defaultSize(width: 360, height: 400)
+        .defaultPosition(.center)
+
+        Window("Bienvenue – ScanBar Menu", id: "welcome") {
+            WelcomeView(onDismiss: nil)
+        }
+        .windowResizability(.contentSize)
+        .defaultSize(width: 560, height: 760)
         .defaultPosition(.center)
     }
 }

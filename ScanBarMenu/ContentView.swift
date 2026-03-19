@@ -10,12 +10,12 @@ struct ContentView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Button("Comment ça marche…") {
+            Button(String(localized: "Comment ça marche…")) {
                 NSApp.activate(ignoringOtherApps: true)
-                (NSApp.delegate as? AppDelegate)?.showWelcomeWindow()
+                openWindow(id: "welcome")
             }
 
-            Button("Configuration…") {
+            Button(String(localized: "Configuration…")) {
                 NSApp.activate(ignoringOtherApps: true)
                 openWindow(id: "settings")
             }
@@ -27,12 +27,17 @@ struct ContentView: View {
 
             Divider()
 
-            Button("Quitter") {
+            Button(String(localized: "Quitter")) {
                 NSApplication.shared.terminate(nil)
             }
         }
         .padding(8)
         .frame(width: 200)
+        .onAppear {
+            if WelcomeView.shouldShowOnLaunch {
+                openWindow(id: "welcome")
+            }
+        }
     }
 }
 

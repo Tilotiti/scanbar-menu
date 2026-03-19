@@ -29,11 +29,11 @@ struct AboutView: View {
             }
 
             VStack(spacing: 4) {
-                Text("ScanBar Menu")
+                Text(String(localized: "ScanBar Menu"))
                     .font(.title2)
                     .fontWeight(.semibold)
 
-                Text("Version \(Self.appVersion)")
+                Text(String(localized: "Version \(Self.appVersion)"))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
@@ -75,7 +75,7 @@ struct AboutView: View {
 
             // Licence MIT
             VStack(alignment: .leading, spacing: 8) {
-                Text("MIT License")
+                Text(String(localized: "MIT License"))
                     .font(.subheadline)
                     .fontWeight(.medium)
 

@@ -7,6 +7,7 @@ import AppKit
 import SwiftUI
 
 struct WelcomeView: View {
+    @Environment(\.dismiss) private var dismiss
     var onDismiss: (() -> Void)?
 
     private static let exampleCode = "1234567890128"
@@ -43,11 +44,11 @@ struct WelcomeView: View {
                     )
                 )
 
-            Text("Comment ça marche ?")
+            Text(String(localized: "Comment ça marche ?"))
                 .font(.title)
                 .fontWeight(.semibold)
 
-            Text("Affichez vos codes-barres et QR codes sur l'écran en un clic.")
+            Text(String(localized: "Affichez vos codes-barres et QR codes sur l'écran en un clic."))
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -59,8 +60,8 @@ struct WelcomeView: View {
         VStack(spacing: 0) {
             stepRow(
                 number: 1,
-                title: "Copiez la référence",
-                subtitle: "Sur votre Mac ou depuis votre iPhone (AirDrop, copier-coller)",
+                title: String(localized: "Copiez la référence"),
+                subtitle: String(localized: "Sur votre Mac ou depuis votre iPhone (AirDrop, copier-coller)"),
                 content: { step1Content }
             )
 
@@ -68,8 +69,8 @@ struct WelcomeView: View {
 
             stepRow(
                 number: 2,
-                title: "ScanBar affiche le code",
-                subtitle: "Le code-barres ou QR code apparaît automatiquement sur votre écran",
+                title: String(localized: "ScanBar affiche le code"),
+                subtitle: String(localized: "Le code-barres ou QR code apparaît automatiquement sur votre écran"),
                 content: { step2Content }
             )
 
@@ -77,8 +78,8 @@ struct WelcomeView: View {
 
             stepRow(
                 number: 3,
-                title: "Scannez l'écran",
-                subtitle: "Utilisez votre scanner ou l'appareil photo pour flasher l'écran",
+                title: String(localized: "Scannez l'écran"),
+                subtitle: String(localized: "Utilisez votre scanner ou l'appareil photo pour flasher l'écran"),
                 content: { step3Content }
             )
         }
@@ -140,11 +141,11 @@ struct WelcomeView: View {
     @ViewBuilder
     private var step1Content: some View {
         HStack(spacing: 16) {
-            step1Device(icon: "desktopcomputer", label: "Mac")
+            step1Device(icon: "desktopcomputer", label: String(localized: "Mac"))
             Image(systemName: "plus")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
-            step1Device(icon: "iphone", label: "iPhone")
+            step1Device(icon: "iphone", label: String(localized: "iPhone"))
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 12)
@@ -154,7 +155,7 @@ struct WelcomeView: View {
             Image(systemName: "doc.on.clipboard.fill")
                 .font(.subheadline)
                 .foregroundStyle(Color.accentColor)
-            Text("Ex. « \(Self.exampleCode) »")
+            Text(String(localized: "Ex. « \(Self.exampleCode) »"))
                 .font(.system(.subheadline, design: .monospaced))
                 .foregroundStyle(.secondary)
         }
@@ -208,10 +209,10 @@ struct WelcomeView: View {
                 .foregroundStyle(Color.accentColor)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text("Scanner ou appareil photo")
+                Text(String(localized: "Scanner ou appareil photo"))
                     .font(.subheadline)
                     .fontWeight(.medium)
-                Text("Le code sur l'écran est scannable comme un code physique")
+                Text(String(localized: "Le code sur l'écran est scannable comme un code physique"))
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
@@ -225,9 +226,13 @@ struct WelcomeView: View {
         VStack(spacing: 16) {
             Button {
                 markAsSeen()
-                onDismiss?()
+                if let onDismiss {
+                    onDismiss()
+                } else {
+                    dismiss()
+                }
             } label: {
-                Text("Compris")
+                Text(String(localized: "Compris"))
                     .font(.headline)
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity)
@@ -237,7 +242,7 @@ struct WelcomeView: View {
             }
             .buttonStyle(.plain)
 
-            Text("Cette fenêtre reste accessible depuis le menu")
+            Text(String(localized: "Cette fenêtre reste accessible depuis le menu"))
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }
