@@ -22,6 +22,12 @@
 		A1000001000000000000014 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000014 /* InfoPlist.xcstrings */; };
 		A1000001000000000000015 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000015 /* AboutView.swift */; };
 		A1000001000000000000017 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000017 /* WelcomeView.swift */; };
+		A1000001000000000000018 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1000002000000000000019 /* Localizable.strings */; };
+		A100000100000000000001B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001B /* Localizable.strings */; };
+		A100000100000000000001C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001C /* Localizable.strings */; };
+		A100000100000000000001D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001D /* Localizable.strings */; };
+		A100000100000000000001E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001E /* Localizable.strings */; };
+		A100000100000000000001F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A100000200000000000001F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		A1000002000000000000015 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		A1000002000000000000016 /* ScanBarMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScanBarMenu.entitlements; sourceTree = "<group>"; };
 		A1000002000000000000017 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A1000002000000000000019 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A100000200000000000001B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A100000200000000000001C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A100000200000000000001D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A100000200000000000001E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A100000200000000000001F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A1000003000000000000001 /* ScanBarMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanBarMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,9 +76,63 @@
 			);
 			sourceTree = "<group>";
 		};
+		A100000600000000000001A /* fr.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A1000002000000000000019 /* Localizable.strings */,
+			);
+			path = fr.lproj;
+			sourceTree = "<group>";
+		};
+		A100000600000000000001B /* de.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A100000200000000000001B /* Localizable.strings */,
+			);
+			path = de.lproj;
+			sourceTree = "<group>";
+		};
+		A100000600000000000001C /* es.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A100000200000000000001C /* Localizable.strings */,
+			);
+			path = es.lproj;
+			sourceTree = "<group>";
+		};
+		A100000600000000000001D /* ja.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A100000200000000000001D /* Localizable.strings */,
+			);
+			path = ja.lproj;
+			sourceTree = "<group>";
+		};
+		A100000600000000000001E /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A100000200000000000001E /* Localizable.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
+		A100000600000000000001F /* it.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A100000200000000000001F /* Localizable.strings */,
+			);
+			path = it.lproj;
+			sourceTree = "<group>";
+		};
 		A1000006000000000000001 /* ScanBarMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A100000600000000000001A /* fr.lproj */,
+				A100000600000000000001B /* de.lproj */,
+				A100000600000000000001C /* es.lproj */,
+				A100000600000000000001D /* ja.lproj */,
+				A100000600000000000001E /* zh-Hans.lproj */,
+				A100000600000000000001F /* it.lproj */,
 				A1000002000000000000001 /* ScanBarMenuApp.swift */,
 				A1000002000000000000002 /* AppDelegate.swift */,
 				A1000002000000000000003 /* ContentView.swift */,
@@ -138,7 +204,12 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
 				fr,
+				it,
+				ja,
+				"zh-Hans",
 			);
 			mainGroup = A1000005000000000000001;
 			productRefGroup = A1000007000000000000001 /* Products */;
@@ -158,6 +229,12 @@
 				A1000001000000000000009 /* Assets.xcassets in Resources */,
 				A1000001000000000000013 /* Localizable.xcstrings in Resources */,
 				A1000001000000000000014 /* InfoPlist.xcstrings in Resources */,
+				A1000001000000000000018 /* Localizable.strings in Resources */,
+				A100000100000000000001B /* Localizable.strings in Resources */,
+				A100000100000000000001C /* Localizable.strings in Resources */,
+				A100000100000000000001D /* Localizable.strings in Resources */,
+				A100000100000000000001E /* Localizable.strings in Resources */,
+				A100000100000000000001F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

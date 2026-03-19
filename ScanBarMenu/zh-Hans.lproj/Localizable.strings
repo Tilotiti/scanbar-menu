@@ -1,0 +1,33 @@
+/* ScanBar Menu - Chinese Simplified Localization */
+
+"About" = "关于";
+"Configuration" = "设置";
+"Configuration…" = "设置…";
+"Copy" = "复制";
+"Copy the reference" = "复制参考";
+"Developed by" = "开发者";
+"Display format" = "显示格式";
+"Display your barcodes and QR codes on screen with one click." = "一键在屏幕上显示您的条形码和二维码。";
+"Download" = "下载";
+"Ex. « %@ »" = "例如：「%@」";
+"Format" = "格式";
+"Got it" = "知道了";
+"How does it work?" = "如何使用？";
+"How it works…" = "如何使用…";
+"Mac" = "Mac";
+"iPhone" = "iPhone";
+"Max character limit" = "最大字符数";
+"Max recommended for %@: %lld" = "%@ 的推荐最大值: %lld";
+"MIT License" = "MIT 许可证";
+"On your Mac or from your iPhone (AirDrop, copy-paste)" = "在 Mac 上或从 iPhone（隔空投送、复制粘贴）";
+"Quit" = "退出";
+"Scan the screen" = "扫描屏幕";
+"ScanBar Menu" = "ScanBar 菜单";
+"ScanBar displays the code" = "ScanBar 显示代码";
+"Scanner or camera" = "扫描仪或相机";
+"The barcode or QR code appears automatically on your screen" = "条形码或二维码会自动显示在屏幕上";
+"The on-screen code is scannable like a physical code" = "屏幕上的代码可以像实体码一样扫描";
+"This window remains accessible from the menu" = "此窗口可从菜单访问";
+"Use your scanner or camera to scan the screen" = "使用扫描仪或相机扫描屏幕";
+"Version %@" = "版本 %@";
+"Width (px)" = "宽度 (px)";

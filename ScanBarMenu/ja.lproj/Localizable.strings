@@ -1,0 +1,33 @@
+/* ScanBar Menu - Japanese Localization */
+
+"About" = "概要";
+"Configuration" = "設定";
+"Configuration…" = "設定…";
+"Copy" = "コピー";
+"Copy the reference" = "参照をコピー";
+"Developed by" = "開発者";
+"Display format" = "表示形式";
+"Display your barcodes and QR codes on screen with one click." = "ワンクリックでバーコードやQRコードを画面に表示します。";
+"Download" = "ダウンロード";
+"Ex. « %@ »" = "例：「%@」";
+"Format" = "形式";
+"Got it" = "わかりました";
+"How does it work?" = "使い方";
+"How it works…" = "使い方…";
+"Mac" = "Mac";
+"iPhone" = "iPhone";
+"Max character limit" = "最大文字数";
+"Max recommended for %@: %lld" = "%@の推奨最大: %lld";
+"MIT License" = "MITライセンス";
+"On your Mac or from your iPhone (AirDrop, copy-paste)" = "MacまたはiPhoneから（AirDrop、コピー&ペースト）";
+"Quit" = "終了";
+"Scan the screen" = "画面をスキャン";
+"ScanBar Menu" = "ScanBar Menu";
+"ScanBar displays the code" = "ScanBarがコードを表示";
+"Scanner or camera" = "スキャナーまたはカメラ";
+"The barcode or QR code appears automatically on your screen" = "バーコードまたはQRコードが画面に自動表示されます";
+"The on-screen code is scannable like a physical code" = "画面のコードは物理的なコードと同様にスキャンできます";
+"This window remains accessible from the menu" = "このウィンドウはメニューからいつでも開けます";
+"Use your scanner or camera to scan the screen" = "スキャナーまたはカメラで画面をスキャンしてください";
+"Version %@" = "バージョン %@";
+"Width (px)" = "幅 (px)";

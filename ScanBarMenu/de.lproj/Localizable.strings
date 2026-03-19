@@ -1,0 +1,33 @@
+/* ScanBar Menu - German Localization */
+
+"About" = "Über";
+"Configuration" = "Einstellungen";
+"Configuration…" = "Einstellungen…";
+"Copy" = "Kopieren";
+"Copy the reference" = "Kopieren Sie die Referenz";
+"Developed by" = "Entwickelt von";
+"Display format" = "Anzeigeformat";
+"Display your barcodes and QR codes on screen with one click." = "Zeigen Sie Ihre Barcodes und QR-Codes mit einem Klick auf dem Bildschirm an.";
+"Download" = "Herunterladen";
+"Ex. « %@ »" = "Z. B. « %@ »";
+"Format" = "Format";
+"Got it" = "Verstanden";
+"How does it work?" = "Wie funktioniert es?";
+"How it works…" = "Wie funktioniert es…";
+"Mac" = "Mac";
+"iPhone" = "iPhone";
+"Max character limit" = "Maximale Zeichenanzahl";
+"Max recommended for %@: %lld" = "Max. empfohlen für %@: %lld";
+"MIT License" = "MIT-Lizenz";
+"On your Mac or from your iPhone (AirDrop, copy-paste)" = "Auf Ihrem Mac oder von Ihrem iPhone (AirDrop, Kopieren-Einfügen)";
+"Quit" = "Beenden";
+"Scan the screen" = "Scannen Sie den Bildschirm";
+"ScanBar Menu" = "ScanBar Menu";
+"ScanBar displays the code" = "ScanBar zeigt den Code an";
+"Scanner or camera" = "Scanner oder Kamera";
+"The barcode or QR code appears automatically on your screen" = "Der Barcode oder QR-Code erscheint automatisch auf Ihrem Bildschirm";
+"The on-screen code is scannable like a physical code" = "Der Code auf dem Bildschirm ist wie ein physischer Code scannbar";
+"This window remains accessible from the menu" = "Dieses Fenster bleibt über das Menü erreichbar";
+"Use your scanner or camera to scan the screen" = "Nutzen Sie Ihren Scanner oder die Kamera zum Scannen des Bildschirms";
+"Version %@" = "Version %@";
+"Width (px)" = "Breite (px)";
