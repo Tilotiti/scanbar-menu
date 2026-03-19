@@ -42,7 +42,7 @@ struct AboutView: View {
 
             // Auteur avec liens GitHub et LinkedIn
             VStack(spacing: 8) {
-                Text(String(localized: "Développé par"))
+                Text(String(localized: "Developed by"))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
 

@@ -92,7 +92,7 @@ struct BarcodePanelView: View {
 
             if let image = image {
                 actionButton(
-                    label: String(localized: "Copier"),
+                    label: String(localized: "Copy"),
                     icon: "doc.on.doc",
                     successIcon: "checkmark.circle.fill",
                     isSuccess: lastSuccessAction == .copy
@@ -102,7 +102,7 @@ struct BarcodePanelView: View {
                 }
 
                 actionButton(
-                    label: String(localized: "Télécharger"),
+                    label: String(localized: "Download"),
                     icon: "square.and.arrow.down",
                     successIcon: "checkmark.circle.fill",
                     isSuccess: lastSuccessAction == .download

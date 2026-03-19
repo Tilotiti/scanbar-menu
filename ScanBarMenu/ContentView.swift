@@ -10,7 +10,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Button(String(localized: "Comment ça marche…")) {
+            Button(String(localized: "How it works…")) {
                 NSApp.activate(ignoringOtherApps: true)
                 openWindow(id: "welcome")
             }
@@ -20,14 +20,14 @@ struct ContentView: View {
                 openWindow(id: "settings")
             }
 
-            Button(String(localized: "À propos")) {
+            Button(String(localized: "About")) {
                 NSApp.activate(ignoringOtherApps: true)
                 openWindow(id: "about")
             }
 
             Divider()
 
-            Button(String(localized: "Quitter")) {
+            Button(String(localized: "Quit")) {
                 NSApplication.shared.terminate(nil)
             }
         }

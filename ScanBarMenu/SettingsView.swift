@@ -27,7 +27,7 @@ struct SettingsView: View {
                 }
                 .pickerStyle(.menu)
             } header: {
-                Text(String(localized: "Format d'affichage"))
+                Text(String(localized: "Display format"))
             }
 
             // Largeur
@@ -47,7 +47,7 @@ struct SettingsView: View {
                         .frame(width: 60, alignment: .trailing)
                 }
             } header: {
-                Text(String(localized: "Largeur (px)"))
+                Text(String(localized: "Width (px)"))
             }
 
             // Limite de caractères
@@ -70,9 +70,9 @@ struct SettingsView: View {
                         .frame(width: 40, alignment: .trailing)
                 }
             } header: {
-                Text(String(localized: "Limite de caractères max"))
+                Text(String(localized: "Max character limit"))
             } footer: {
-                Text(String(localized: "Max recommandé pour \(settings.format.rawValue) : \(settings.format.recommendedMaxLength)"))
+                Text(String(localized: "Max recommended for \(settings.format.rawValue): \(settings.format.recommendedMaxLength)"))
             }
         }
         .formStyle(.grouped)

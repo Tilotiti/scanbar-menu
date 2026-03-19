@@ -26,7 +26,7 @@ struct ScanBarMenuApp: App {
         .defaultSize(width: 400, height: 380)
         .defaultPosition(.center)
 
-        Window(String(localized: "À propos"), id: "about") {
+        Window(String(localized: "About"), id: "about") {
             AboutView()
                 .frame(minWidth: 360, minHeight: 400)
         }

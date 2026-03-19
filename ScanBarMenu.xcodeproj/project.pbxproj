@@ -133,7 +133,7 @@
 			};
 			buildConfigurationList = A100000D000000000000001 /* Build configuration list for PBXProject "ScanBarMenu" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = fr;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,

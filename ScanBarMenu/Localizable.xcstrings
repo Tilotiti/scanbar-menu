@@ -1,1008 +1,283 @@
 {
-  "sourceLanguage" : "fr",
+  "sourceLanguage" : "en",
   "strings" : {
-    "À propos" : {
+    "About" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Über"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Acerca de"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "概要"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "关于"
-          }
-        }
-      }
-    },
-    "Affichez vos codes-barres et QR codes sur l'écran en un clic." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeigen Sie Ihre Barcodes und QR-Codes mit einem Klick auf dem Bildschirm an."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Display your barcodes and QR codes on screen with one click."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Muestre sus códigos de barras y códigos QR en pantalla con un solo clic."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ワンクリックでバーコードやQRコードを画面に表示します。"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一键在屏幕上显示您的条形码和二维码。"
-          }
-        }
-      }
-    },
-    "Comment ça marche ?" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wie funktioniert es?"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "How does it work?"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Cómo funciona?"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使い方"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "如何使用？"
-          }
-        }
-      }
-    },
-    "Comment ça marche…" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wie funktioniert es…"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "How it works…"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cómo funciona…"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使い方…"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "如何使用…"
-          }
-        }
-      }
-    },
-    "Compris" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verstanden"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Got it"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entendido"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "わかりました"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "知道了"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Über" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Acerca de" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "À propos" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "概要" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关于" } }
       }
     },
     "Configuration" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einstellungen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configuration"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configuración"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "设置"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Einstellungen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Configuración" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Configuration" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "設定" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置" } }
       }
     },
     "Configuration…" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einstellungen…"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configuration…"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configuración…"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定…"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "设置…"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Einstellungen…" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Configuración…" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Configuration…" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "設定…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置…" } }
       }
     },
-    "Copier" : {
+    "Copy" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieren"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copiar"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "コピー"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "复制"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kopieren" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Copiar" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Copier" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "コピー" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "复制" } }
       }
     },
-    "Copiez la référence" : {
+    "Copy the reference" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieren Sie die Referenz"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy the reference"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copie la referencia"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "参照をコピー"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "复制参考"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kopieren Sie die Referenz" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Copie la referencia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Copiez la référence" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "参照をコピー" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "复制参考" } }
       }
     },
-    "Développé par" : {
+    "Developed by" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entwickelt von"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Developed by"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desarrollado por"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "開発者"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "开发者"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Entwickelt von" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Desarrollado por" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Développé par" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "開発者" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开发者" } }
+      }
+    },
+    "Display format" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Anzeigeformat" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Formato de visualización" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Format d'affichage" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "表示形式" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示格式" } }
+      }
+    },
+    "Display your barcodes and QR codes on screen with one click." : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Zeigen Sie Ihre Barcodes und QR-Codes mit einem Klick auf dem Bildschirm an." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Muestre sus códigos de barras y códigos QR en pantalla con un solo clic." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Affichez vos codes-barres et QR codes sur l'écran en un clic." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ワンクリックでバーコードやQRコードを画面に表示します。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "一键在屏幕上显示您的条形码和二维码。" } }
+      }
+    },
+    "Download" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Herunterladen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Descargar" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Télécharger" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ダウンロード" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下载" } }
       }
     },
     "Ex. « %@ »" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Z. B. « %@ »"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ex. « %@ »"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ej. « %@ »"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "例：「%@」"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "例如：「%@」"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Z. B. « %@ »" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ej. « %@ »" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ex. « %@ »" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "例：「%@」" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "例如：「%@」" } }
       }
     },
     "Format" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Format"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Format"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Formato"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "形式"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "格式"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Format" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Formato" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Format" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "形式" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "格式" } }
       }
     },
-    "Format d'affichage" : {
+    "Got it" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anzeigeformat"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Display format"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Formato de visualización"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "表示形式"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "显示格式"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Verstanden" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Entendido" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Compris" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "わかりました" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "知道了" } }
       }
     },
-    "Largeur (px)" : {
+    "How does it work?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Breite (px)"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Width (px)"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ancho (px)"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "幅 (px)"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "宽度 (px)"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Wie funktioniert es?" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "¿Cómo funciona?" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Comment ça marche ?" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "使い方" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "如何使用？" } }
       }
     },
-    "Le code sur l'écran est scannable comme un code physique" : {
+    "How it works…" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Der Code auf dem Bildschirm ist wie ein physischer Code scannbar"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The on-screen code is scannable like a physical code"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El código en pantalla se puede escanear como un código físico"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "画面のコードは物理的なコードと同様にスキャンできます"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "屏幕上的代码可以像实体码一样扫描"
-          }
-        }
-      }
-    },
-    "Le code-barres ou QR code apparaît automatiquement sur votre écran" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Der Barcode oder QR-Code erscheint automatisch auf Ihrem Bildschirm"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The barcode or QR code appears automatically on your screen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El código de barras o QR aparece automáticamente en la pantalla"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "バーコードまたはQRコードが画面に自動表示されます"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "条形码或二维码会自动显示在屏幕上"
-          }
-        }
-      }
-    },
-    "Limite de caractères max" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maximale Zeichenanzahl"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Max character limit"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Límite máximo de caracteres"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "最大文字数"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "最大字符数"
-          }
-        }
-      }
-    },
-    "MIT License" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MIT-Lizenz"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MIT License"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Licencia MIT"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MITライセンス"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MIT 许可证"
-          }
-        }
-      }
-    },
-    "Max recommandé pour %@ : %lld" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Max. empfohlen für %@: %lld"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Max recommended for %@: %lld"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Máx. recomendado para %@: %lld"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@の推奨最大: %lld"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ 的推荐最大值: %lld"
-          }
-        }
-      }
-    },
-    "Quitter" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beenden"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quit"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Salir"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "終了"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "退出"
-          }
-        }
-      }
-    },
-    "ScanBar affiche le code" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar zeigt den Code an"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar displays the code"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar muestra el código"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBarがコードを表示"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar 显示代码"
-          }
-        }
-      }
-    },
-    "ScanBar Menu" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar Menu"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar Menu"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar Menu"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar Menu"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ScanBar 菜单"
-          }
-        }
-      }
-    },
-    "Scanner ou appareil photo" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scanner oder Kamera"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scanner or camera"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escáner o cámara"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "スキャナーまたはカメラ"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "扫描仪或相机"
-          }
-        }
-      }
-    },
-    "Scannez l'écran" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scannen Sie den Bildschirm"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scan the screen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escanee la pantalla"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "画面をスキャン"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "扫描屏幕"
-          }
-        }
-      }
-    },
-    "Sur votre Mac ou depuis votre iPhone (AirDrop, copier-coller)" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auf Ihrem Mac oder von Ihrem iPhone (AirDrop, Kopieren-Einfügen)"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "On your Mac or from your iPhone (AirDrop, copy-paste)"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "En su Mac o desde su iPhone (AirDrop, copiar-pegar)"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MacまたはiPhoneから（AirDrop、コピー&ペースト）"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Mac 上或从 iPhone（隔空投送、复制粘贴）"
-          }
-        }
-      }
-    },
-    "Télécharger" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Herunterladen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descargar"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ダウンロード"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "下载"
-          }
-        }
-      }
-    },
-    "Utilisez votre scanner ou l'appareil photo pour flasher l'écran" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nutzen Sie Ihren Scanner oder die Kamera zum Scannen des Bildschirms"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use your scanner or camera to scan the screen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use el escáner o la cámara para escanear la pantalla"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "スキャナーまたはカメラで画面をスキャンしてください"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用扫描仪或相机扫描屏幕"
-          }
-        }
-      }
-    },
-    "Version %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version %@"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Versión %@"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "バージョン %@"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "版本 %@"
-          }
-        }
-      }
-    },
-    "iPhone" : {
-      "localizations" : {
-        "de" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
-        "ja" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Wie funktioniert es…" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cómo funciona…" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Comment ça marche…" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "使い方…" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "如何使用…" } }
       }
     },
     "Mac" : {
       "localizations" : {
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Mac" } },
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Mac" } },
         "es" : { "stringUnit" : { "state" : "translated", "value" : "Mac" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Mac" } },
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "Mac" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Mac" } }
       }
     },
-    "Cette fenêtre reste accessible depuis le menu" : {
+    "Max character limit" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dieses Fenster bleibt über das Menü erreichbar"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This window remains accessible from the menu"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esta ventana sigue accesible desde el menú"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "このウィンドウはメニューからいつでも開けます"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "此窗口可从菜单访问"
-          }
-        }
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Maximale Zeichenanzahl" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Límite máximo de caracteres" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Limite de caractères max" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "最大文字数" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "最大字符数" } }
+      }
+    },
+    "Max recommended for %@: %lld" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Max. empfohlen für %@: %lld" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Máx. recomendado para %@: %lld" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Max recommandé pour %@ : %lld" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "%@の推奨最大: %lld" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%@ 的推荐最大值: %lld" } }
+      }
+    },
+    "MIT License" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "MIT-Lizenz" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Licencia MIT" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Licence MIT" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "MITライセンス" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "MIT 许可证" } }
+      }
+    },
+    "On your Mac or from your iPhone (AirDrop, copy-paste)" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Auf Ihrem Mac oder von Ihrem iPhone (AirDrop, Kopieren-Einfügen)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "En su Mac o desde su iPhone (AirDrop, copiar-pegar)" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Sur votre Mac ou depuis votre iPhone (AirDrop, copier-coller)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "MacまたはiPhoneから（AirDrop、コピー&ペースト）" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "在 Mac 上或从 iPhone（隔空投送、复制粘贴）" } }
+      }
+    },
+    "Quit" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Beenden" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Salir" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Quitter" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "終了" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "退出" } }
+      }
+    },
+    "Scan the screen" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Scannen Sie den Bildschirm" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Escanee la pantalla" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Scannez l'écran" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "画面をスキャン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "扫描屏幕" } }
+      }
+    },
+    "ScanBar Menu" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar Menu" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar Menu" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar Menu" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar Menu" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar 菜单" } }
+      }
+    },
+    "ScanBar displays the code" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar zeigt den Code an" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar muestra el código" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar affiche le code" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "ScanBarがコードを表示" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "ScanBar 显示代码" } }
+      }
+    },
+    "Scanner or camera" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Scanner oder Kamera" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Escáner o cámara" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Scanner ou appareil photo" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "スキャナーまたはカメラ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "扫描仪或相机" } }
+      }
+    },
+    "The barcode or QR code appears automatically on your screen" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Der Barcode oder QR-Code erscheint automatisch auf Ihrem Bildschirm" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "El código de barras o QR aparece automáticamente en la pantalla" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Le code-barres ou QR code apparaît automatiquement sur votre écran" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "バーコードまたはQRコードが画面に自動表示されます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "条形码或二维码会自动显示在屏幕上" } }
+      }
+    },
+    "The on-screen code is scannable like a physical code" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Der Code auf dem Bildschirm ist wie ein physischer Code scannbar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "El código en pantalla se puede escanear como un código físico" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Le code sur l'écran est scannable comme un code physique" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "画面のコードは物理的なコードと同様にスキャンできます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "屏幕上的代码可以像实体码一样扫描" } }
+      }
+    },
+    "This window remains accessible from the menu" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Dieses Fenster bleibt über das Menü erreichbar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Esta ventana sigue accesible desde el menú" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Cette fenêtre reste accessible depuis le menu" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "このウィンドウはメニューからいつでも開けます" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "此窗口可从菜单访问" } }
+      }
+    },
+    "Use your scanner or camera to scan the screen" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Nutzen Sie Ihren Scanner oder die Kamera zum Scannen des Bildschirms" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Use el escáner o la cámara para escanear la pantalla" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Utilisez votre scanner ou l'appareil photo pour flasher l'écran" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "スキャナーまたはカメラで画面をスキャンしてください" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "使用扫描仪或相机扫描屏幕" } }
+      }
+    },
+    "Version %@" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Version %@" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Versión %@" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Version %@" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "バージョン %@" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "版本 %@" } }
+      }
+    },
+    "Width (px)" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Breite (px)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ancho (px)" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Largeur (px)" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "幅 (px)" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "宽度 (px)" } }
+      }
+    },
+    "iPhone" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "iPhone" } }
       }
     }
   },

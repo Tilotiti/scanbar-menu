@@ -44,11 +44,11 @@ struct WelcomeView: View {
                     )
                 )
 
-            Text(String(localized: "Comment ça marche ?"))
+            Text(String(localized: "How does it work?"))
                 .font(.title)
                 .fontWeight(.semibold)
 
-            Text(String(localized: "Affichez vos codes-barres et QR codes sur l'écran en un clic."))
+            Text(String(localized: "Display your barcodes and QR codes on screen with one click."))
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -60,8 +60,8 @@ struct WelcomeView: View {
         VStack(spacing: 0) {
             stepRow(
                 number: 1,
-                title: String(localized: "Copiez la référence"),
-                subtitle: String(localized: "Sur votre Mac ou depuis votre iPhone (AirDrop, copier-coller)"),
+                title: String(localized: "Copy the reference"),
+                subtitle: String(localized: "On your Mac or from your iPhone (AirDrop, copy-paste)"),
                 content: { step1Content }
             )
 
@@ -69,8 +69,8 @@ struct WelcomeView: View {
 
             stepRow(
                 number: 2,
-                title: String(localized: "ScanBar affiche le code"),
-                subtitle: String(localized: "Le code-barres ou QR code apparaît automatiquement sur votre écran"),
+                title: String(localized: "ScanBar displays the code"),
+                subtitle: String(localized: "The barcode or QR code appears automatically on your screen"),
                 content: { step2Content }
             )
 
@@ -78,8 +78,8 @@ struct WelcomeView: View {
 
             stepRow(
                 number: 3,
-                title: String(localized: "Scannez l'écran"),
-                subtitle: String(localized: "Utilisez votre scanner ou l'appareil photo pour flasher l'écran"),
+                title: String(localized: "Scan the screen"),
+                subtitle: String(localized: "Use your scanner or camera to scan the screen"),
                 content: { step3Content }
             )
         }
@@ -209,10 +209,10 @@ struct WelcomeView: View {
                 .foregroundStyle(Color.accentColor)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(String(localized: "Scanner ou appareil photo"))
+                Text(String(localized: "Scanner or camera"))
                     .font(.subheadline)
                     .fontWeight(.medium)
-                Text(String(localized: "Le code sur l'écran est scannable comme un code physique"))
+                Text(String(localized: "The on-screen code is scannable like a physical code"))
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
@@ -232,7 +232,7 @@ struct WelcomeView: View {
                     dismiss()
                 }
             } label: {
-                Text(String(localized: "Compris"))
+                Text(String(localized: "Got it"))
                     .font(.headline)
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity)
@@ -242,7 +242,7 @@ struct WelcomeView: View {
             }
             .buttonStyle(.plain)
 
-            Text(String(localized: "Cette fenêtre reste accessible depuis le menu"))
+            Text(String(localized: "This window remains accessible from the menu"))
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }
