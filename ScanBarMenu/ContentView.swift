@@ -10,6 +10,11 @@ struct ContentView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
+            Button("Comment ça marche…") {
+                NSApp.activate(ignoringOtherApps: true)
+                (NSApp.delegate as? AppDelegate)?.showWelcomeWindow()
+            }
+
             Button("Configuration…") {
                 NSApp.activate(ignoringOtherApps: true)
                 openWindow(id: "settings")
@@ -27,7 +32,7 @@ struct ContentView: View {
             }
         }
         .padding(8)
-        .frame(width: 180)
+        .frame(width: 200)
     }
 }
 
