@@ -32,28 +32,24 @@ struct BarcodePanelView: View {
 
     @State private var dragStartWidth: CGFloat?
     @State private var isResizing = false
+    @State private var lastSuccessAction: SuccessAction? = nil
+
+    private enum SuccessAction: Equatable {
+        case copy
+        case download
+    }
 
     var body: some View {
         VStack(spacing: 12) {
-            HStack(spacing: 0) {
-                WindowDragRegion()
-                    .overlay(
-                        Text(value)
-                            .font(.system(.body, design: .monospaced))
-                            .lineLimit(1)
-                            .truncationMode(.middle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .allowsHitTesting(false)
-                    )
-                    .frame(maxWidth: .infinity)
-
-                Button(action: onClose) {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.title2)
-                        .symbolRenderingMode(.hierarchical)
-                        .foregroundStyle(.secondary)
-                }
-                .buttonStyle(.plain)
+            if let image = BarcodeGenerator.generate(
+                from: value,
+                format: settings.format,
+                width: settings.width,
+                height: settings.height
+            ) {
+                infoBar(image: image)
+            } else {
+                infoBar(image: nil)
             }
 
             if let image = BarcodeGenerator.generate(
@@ -64,13 +60,68 @@ struct BarcodePanelView: View {
             ) {
                 imageView(image: image)
             }
-
-            Text(settings.format.rawValue)
-                .font(.caption)
-                .foregroundStyle(.secondary)
         }
         .padding(16)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func infoBar(image: NSImage?) -> some View {
+        HStack(spacing: 10) {
+            WindowDragRegion()
+                .overlay(
+                    HStack(spacing: 10) {
+                        Text(settings.format.rawValue)
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(.quaternary.opacity(0.8), in: Capsule())
+
+                        Text(value)
+                            .font(.system(.subheadline, design: .monospaced))
+                            .lineLimit(1)
+                            .truncationMode(.middle)
+                            .foregroundStyle(.primary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .allowsHitTesting(false)
+                    }
+                    .padding(.horizontal, 4)
+                )
+                .frame(maxWidth: .infinity)
+
+            if let image = image {
+                actionButton(
+                    label: "Copier",
+                    icon: "doc.on.doc",
+                    successIcon: "checkmark.circle.fill",
+                    isSuccess: lastSuccessAction == .copy
+                ) {
+                    copyToClipboard(image: image)
+                    showSuccess(.copy)
+                }
+
+                actionButton(
+                    label: "Télécharger",
+                    icon: "square.and.arrow.down",
+                    successIcon: "checkmark.circle.fill",
+                    isSuccess: lastSuccessAction == .download
+                ) {
+                    if saveToFile(image: image) {
+                        showSuccess(.download)
+                    }
+                }
+            }
+
+            Button(action: onClose) {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.title2)
+                    .symbolRenderingMode(.hierarchical)
+                    .foregroundStyle(.secondary)
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(.vertical, 4)
     }
 
     @ViewBuilder
@@ -86,6 +137,69 @@ struct BarcodePanelView: View {
                 .padding(.horizontal, 8)
 
             resizeHandle(currentWidth: currentWidth)
+        }
+    }
+
+    @ViewBuilder
+    private func actionButton(
+        label: String,
+        icon: String,
+        successIcon: String,
+        isSuccess: Bool,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: isSuccess ? successIcon : icon)
+                    .font(.body.weight(.medium))
+                    .foregroundStyle(isSuccess ? .green : .primary)
+                    .scaleEffect(isSuccess ? 1.1 : 1)
+                    .animation(.easeInOut(duration: 0.2), value: isSuccess)
+                Text(label)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(.quaternary.opacity(0.5), in: RoundedRectangle(cornerRadius: 8))
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func showSuccess(_ action: SuccessAction) {
+        lastSuccessAction = action
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation(.easeOut(duration: 0.2)) {
+                lastSuccessAction = nil
+            }
+        }
+    }
+
+    private func copyToClipboard(image: NSImage) {
+        NSPasteboard.general.clearContents()
+        NSPasteboard.general.writeObjects([image])
+    }
+
+    @discardableResult
+    private func saveToFile(image: NSImage) -> Bool {
+        guard let tiffData = image.tiffRepresentation,
+              let bitmap = NSBitmapImageRep(data: tiffData),
+              let pngData = bitmap.representation(using: .png, properties: [:]) else { return false }
+
+        guard let downloadsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else { return false }
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
+        let dateString = formatter.string(from: Date())
+        let formatSlug = settings.format.rawValue.lowercased().replacingOccurrences(of: " ", with: "-")
+        let fileName = "\(formatSlug)_\(dateString).png"
+        let fileURL = downloadsURL.appendingPathComponent(fileName)
+
+        do {
+            try pngData.write(to: fileURL)
+            return true
+        } catch {
+            return false
         }
     }
 
