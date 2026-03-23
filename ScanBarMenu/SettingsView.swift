@@ -4,9 +4,12 @@
 //
 
 import SwiftUI
+import AppKit
+import UniformTypeIdentifiers
 
 struct SettingsView: View {
     @ObservedObject var settings: AppSettings
+    @State private var showFolderPicker = false
 
     private static let widthRange: ClosedRange<CGFloat> = 200 ... 1200
     private static let widthStep: CGFloat = 50
@@ -15,6 +18,37 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
+            // Dossier d'enregistrement
+            Section {
+                if let name = settings.saveFolderDisplayName {
+                    HStack {
+                        Image(systemName: "folder.fill")
+                            .foregroundStyle(.secondary)
+                        Text(name)
+                            .lineLimit(1)
+                            .truncationMode(.middle)
+                        Spacer()
+                        Button(String(localized: "Change")) {
+                            showFolderPicker = true
+                        }
+                        Button(String(localized: "Clear"), role: .destructive) {
+                            settings.saveFolderBookmark = nil
+                            settings.saveFolderDisplayName = nil
+                        }
+                    }
+                } else {
+                    Button {
+                        showFolderPicker = true
+                    } label: {
+                        Label(String(localized: "Choose save folder"), systemImage: "folder.badge.plus")
+                    }
+                }
+            } header: {
+                Text(String(localized: "Save folder"))
+            } footer: {
+                Text(String(localized: "Where to save generated images."))
+            }
+
             // Format
             Section {
                 Picker(String(localized: "Format"), selection: Binding(
@@ -77,7 +111,34 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .padding()
+        .fileImporter(
+            isPresented: $showFolderPicker,
+            allowedContentTypes: [.directory],
+            onCompletion: { result in
+                guard case .success(let url) = result else { return }
+                guard url.startAccessingSecurityScopedResource() else { return }
+                defer { url.stopAccessingSecurityScopedResource() }
+                do {
+                    let bookmark = try url.bookmarkData(
+                        options: .withSecurityScope,
+                        includingResourceValuesForKeys: nil,
+                        relativeTo: nil
+                    )
+                    settings.saveFolderBookmark = bookmark
+                    settings.saveFolderDisplayName = url.lastPathComponent
+                } catch { }
+            }
+        )
+        .onDisappear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                let configTitle = String(localized: "Configuration")
+                if !NSApp.windows.contains(where: { $0.title == configTitle }) {
+                    NSApp.setActivationPolicy(.accessory)
+                }
+            }
+        }
     }
+
 }
 
 #Preview {

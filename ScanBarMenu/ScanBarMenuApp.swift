@@ -21,6 +21,13 @@ struct ScanBarMenuApp: App {
         Window(String(localized: "Configuration"), id: "settings") {
             SettingsView(settings: AppSettings.shared)
                 .frame(minWidth: 400, minHeight: 380)
+                .overlay(
+                    HostingWindowAccessor { window in
+                        HostingWindowStore.shared.settingsWindow = window
+                    }
+                    .frame(width: 1, height: 1)
+                    .allowsHitTesting(false)
+                )
         }
         .windowResizability(.contentSize)
         .defaultSize(width: 400, height: 380)

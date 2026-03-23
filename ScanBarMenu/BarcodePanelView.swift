@@ -29,6 +29,7 @@ struct BarcodePanelView: View {
     @ObservedObject var settings: AppSettings
     let onClose: () -> Void
     var onWidthChange: ((CGFloat) -> Void)? = nil
+    var onDownloadRequested: ((NSImage, String, @escaping (Bool) -> Void) -> Void)? = nil
 
     @State private var dragStartWidth: CGFloat?
     @State private var isResizing = false
@@ -107,8 +108,15 @@ struct BarcodePanelView: View {
                     successIcon: "checkmark.circle.fill",
                     isSuccess: lastSuccessAction == .download
                 ) {
-                    if saveToFile(image: image) {
-                        showSuccess(.download)
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
+                    let dateString = formatter.string(from: Date())
+                    let formatSlug = settings.format.rawValue.lowercased().replacingOccurrences(of: " ", with: "-")
+                    let suggestedName = "\(formatSlug)_\(dateString).png"
+                    onDownloadRequested?(image, suggestedName) { success in
+                        if success {
+                            showSuccess(.download)
+                        }
                     }
                 }
             }
@@ -178,29 +186,6 @@ struct BarcodePanelView: View {
     private func copyToClipboard(image: NSImage) {
         NSPasteboard.general.clearContents()
         NSPasteboard.general.writeObjects([image])
-    }
-
-    @discardableResult
-    private func saveToFile(image: NSImage) -> Bool {
-        guard let tiffData = image.tiffRepresentation,
-              let bitmap = NSBitmapImageRep(data: tiffData),
-              let pngData = bitmap.representation(using: .png, properties: [:]) else { return false }
-
-        guard let downloadsURL = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first else { return false }
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
-        let dateString = formatter.string(from: Date())
-        let formatSlug = settings.format.rawValue.lowercased().replacingOccurrences(of: " ", with: "-")
-        let fileName = "\(formatSlug)_\(dateString).png"
-        let fileURL = downloadsURL.appendingPathComponent(fileName)
-
-        do {
-            try pngData.write(to: fileURL)
-            return true
-        } catch {
-            return false
-        }
     }
 
     private func resizeHandle(currentWidth: CGFloat) -> some View {

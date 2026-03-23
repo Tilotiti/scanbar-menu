@@ -4,7 +4,6 @@
 //
 
 import AppKit
-import AppKit
 import Foundation
 
 /// Format de code-barres ou QR proposé à l'utilisateur.
@@ -48,6 +47,8 @@ final class AppSettings: ObservableObject {
         static let maxCharacterCount = "maxCharacterCount"
         static let panelOriginX = "panelOriginX"
         static let panelOriginY = "panelOriginY"
+        static let saveFolderBookmark = "saveFolderBookmark"
+        static let saveFolderDisplayName = "saveFolderDisplayName"
     }
 
     @Published var format: BarcodeFormat {
@@ -65,6 +66,25 @@ final class AppSettings: ObservableObject {
     @Published var maxCharacterCount: Int {
         didSet {
             defaults.set(maxCharacterCount, forKey: Keys.maxCharacterCount)
+        }
+    }
+
+    /// Dossier d'enregistrement choisi par l'utilisateur (via NSOpenPanel).
+    /// Persisté sous forme de security-scoped bookmark.
+    var saveFolderBookmark: Data? {
+        get { defaults.data(forKey: Keys.saveFolderBookmark) }
+        set {
+            objectWillChange.send()
+            defaults.set(newValue, forKey: Keys.saveFolderBookmark)
+        }
+    }
+
+    /// Nom affiché du dossier (pour l'UI).
+    var saveFolderDisplayName: String? {
+        get { defaults.string(forKey: Keys.saveFolderDisplayName) }
+        set {
+            objectWillChange.send()
+            defaults.set(newValue, forKey: Keys.saveFolderDisplayName)
         }
     }
 

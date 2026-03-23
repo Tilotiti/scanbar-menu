@@ -28,6 +28,96 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置…" } }
       }
     },
+    "Choose save folder" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Ordner wählen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Elegir carpeta" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Choisir un dossier" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Scegli cartella" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "フォルダを選択" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择文件夹" } }
+      }
+    },
+    "Save folder" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Speicherordner" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Carpeta de guardado" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dossier d'enregistrement" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cartella di salvataggio" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "保存フォルダ" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存文件夹" } }
+      }
+    },
+    "Where to save generated images." : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Speicherort der generierten Bilder." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dónde guardar las imágenes generadas." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Où enregistrer les images générées." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Dove salvare le immagini generate." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "生成画像の保存先。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "生成图像的保存位置。" } }
+      }
+    },
+    "Change" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Ändern" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cambiar" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Modifier" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Modifica" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "変更" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "更改" } }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Löschen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Borrar" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Effacer" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cancella" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "クリア" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清除" } }
+      }
+    },
+    "Select" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Auswählen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Seleccionar" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Choisir" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Seleziona" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "選択" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "选择" } }
+      }
+    },
+    "Open Configuration" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Einstellungen öffnen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Abrir configuración" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ouvrir la configuration" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Apri configurazione" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "設定を開く" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "打开设置" } }
+      }
+    },
+    "Save folder required" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Speicherordner erforderlich" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Carpeta de guardado requerida" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dossier d'enregistrement requis" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Cartella di salvataggio richiesta" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "保存フォルダが必要です" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "需要保存文件夹" } }
+      }
+    },
+    "To save barcode images, choose a save folder in Configuration. Click the menu bar icon, then Configuration." : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Um Barcode-Bilder zu speichern, wählen Sie einen Ordner in den Einstellungen. Klicken Sie auf das Symbol in der Menüleiste, dann auf Einstellungen." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Para guardar imágenes de códigos de barras, elija una carpeta en Configuración. Haga clic en el icono de la barra de menús y luego en Configuración." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Pour enregistrer les images de codes-barres, choisissez un dossier dans Configuration. Cliquez sur l'icône de la barre de menu, puis sur Configuration." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Per salvare le immagini dei codici a barre, scegli una cartella in Configurazione. Clicca sull'icona della barra dei menu, poi su Configurazione." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "バーコード画像を保存するには、設定でフォルダを選択してください。メニューバーのアイコンをクリックし、設定を選びます。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "要保存条形码图像，请在设置中选择保存文件夹。点击菜单栏图标，然后点击设置。" } }
+      }
+    },
     "Copy" : {
       "localizations" : {
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Kopieren" } },

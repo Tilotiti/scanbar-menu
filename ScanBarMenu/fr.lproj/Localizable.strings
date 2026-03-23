@@ -1,6 +1,9 @@
 /* ScanBar Menu - French Localization */
 
 "About" = "À propos";
+"Change" = "Modifier";
+"Choose save folder" = "Choisir un dossier";
+"Clear" = "Effacer";
 "Configuration" = "Configuration";
 "Configuration…" = "Configuration…";
 "Copy" = "Copier";
@@ -20,7 +23,11 @@
 "Max recommended for %@: %lld" = "Max recommandé pour %@ : %lld";
 "MIT License" = "Licence MIT";
 "On your Mac or from your iPhone (AirDrop, copy-paste)" = "Sur votre Mac ou depuis votre iPhone (AirDrop, copier-coller)";
+"Open Configuration" = "Ouvrir la configuration";
 "Quit" = "Quitter";
+"Save folder" = "Dossier d'enregistrement";
+"Save folder required" = "Dossier d'enregistrement requis";
+"Select" = "Choisir";
 "Scan the screen" = "Scannez l'écran";
 "ScanBar Menu" = "ScanBar Menu";
 "ScanBar displays the code" = "ScanBar affiche le code";
@@ -30,4 +37,6 @@
 "This window remains accessible from the menu" = "Cette fenêtre reste accessible depuis le menu";
 "Use your scanner or camera to scan the screen" = "Utilisez votre scanner ou l'appareil photo pour flasher l'écran";
 "Version %@" = "Version %@";
+"Where to save generated images." = "Où enregistrer les images générées.";
 "Width (px)" = "Largeur (px)";
+"To save barcode images, choose a save folder in Configuration. Click the menu bar icon, then Configuration." = "Pour enregistrer les images de codes-barres, choisissez un dossier dans Configuration. Cliquez sur l'icône de la barre de menu, puis sur Configuration.";

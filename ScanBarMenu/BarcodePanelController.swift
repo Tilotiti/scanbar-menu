@@ -5,6 +5,7 @@
 
 import AppKit
 import SwiftUI
+import UniformTypeIdentifiers
 
 final class BarcodePanelController: NSObject, NSWindowDelegate {
     private var panel: NSPanel?
@@ -28,7 +29,10 @@ final class BarcodePanelController: NSObject, NSWindowDelegate {
                 value: value,
                 settings: AppSettings.shared,
                 onClose: { [weak self] in self?.hide() },
-                onWidthChange: { [weak self] _ in self?.resizePanelToFitContent() }
+                onWidthChange: { [weak self] _ in self?.resizePanelToFitContent() },
+                onDownloadRequested: { [weak self] image, suggestedName, completion in
+                    self?.presentSavePanel(for: image, suggestedName: suggestedName, completion: completion)
+                }
             )
             panel.orderFrontRegardless()
         } else {
@@ -67,7 +71,10 @@ final class BarcodePanelController: NSObject, NSWindowDelegate {
             value: value,
             settings: AppSettings.shared,
             onClose: { [weak self] in self?.hide() },
-            onWidthChange: { [weak self] _ in self?.resizePanelToFitContent() }
+            onWidthChange: { [weak self] _ in self?.resizePanelToFitContent() },
+            onDownloadRequested: { [weak self] image, suggestedName, completion in
+                self?.presentSavePanel(for: image, suggestedName: suggestedName, completion: completion)
+            }
         )
         let hostingView = NSHostingView(rootView: contentView)
         self.hostingView = hostingView
@@ -133,5 +140,76 @@ final class BarcodePanelController: NSObject, NSWindowDelegate {
         frame.size = NSSize(width: panelWidth, height: panelHeight)
         frame.origin.y -= heightDelta
         panel.setFrame(frame, display: true, animate: true)
+    }
+
+    func presentSavePanel(for image: NSImage, suggestedName: String, completion: @escaping (Bool) -> Void) {
+        guard let tiffData = image.tiffRepresentation,
+              let bitmap = NSBitmapImageRep(data: tiffData),
+              let pngData = bitmap.representation(using: .png, properties: [:]) else {
+            completion(false)
+            return
+        }
+
+        // Si un dossier a été choisi par l'utilisateur (via NSOpenPanel), enregistrer directement
+        guard let bookmark = AppSettings.shared.saveFolderBookmark else {
+            showChooseSaveFolderAlert()
+            completion(false)
+            return
+        }
+
+        var isStale = false
+        do {
+            let folderURL = try URL(
+                resolvingBookmarkData: bookmark,
+                options: .withSecurityScope,
+                relativeTo: nil,
+                bookmarkDataIsStale: &isStale
+            )
+            guard folderURL.startAccessingSecurityScopedResource() else {
+                completion(false)
+                return
+            }
+            defer { folderURL.stopAccessingSecurityScopedResource() }
+
+            let fileURL = folderURL.appendingPathComponent(suggestedName)
+            try pngData.write(to: fileURL)
+            if isStale {
+                refreshSaveFolderBookmark(from: folderURL)
+            }
+            DispatchQueue.main.async { completion(true) }
+        } catch {
+            AppSettings.shared.saveFolderBookmark = nil
+            AppSettings.shared.saveFolderDisplayName = nil
+            showChooseSaveFolderAlert()
+            completion(false)
+        }
+    }
+
+    private func refreshSaveFolderBookmark(from url: URL) {
+        do {
+            let newBookmark = try url.bookmarkData(
+                options: .withSecurityScope,
+                includingResourceValuesForKeys: nil,
+                relativeTo: nil
+            )
+            AppSettings.shared.saveFolderBookmark = newBookmark
+        } catch {
+            // Ignorer si le bookmark ne peut pas être rafraîchi
+        }
+    }
+
+    /// NSSavePanel provoque un crash dans ce contexte (menu bar + panel flottant).
+    /// On affiche une alerte invitant à configurer le dossier dans les réglages.
+    private func showChooseSaveFolderAlert() {
+        let alert = NSAlert()
+        alert.messageText = String(localized: "Save folder required")
+        alert.informativeText = String(localized: "To save barcode images, choose a save folder in Configuration. Click the menu bar icon, then Configuration.")
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: String(localized: "OK"))
+        alert.addButton(withTitle: String(localized: "Open Configuration"))
+        let response = alert.runModal()
+        if response == .alertSecondButtonReturn {
+            NotificationCenter.default.post(name: .openSettingsWindow, object: nil)
+        }
     }
 }
