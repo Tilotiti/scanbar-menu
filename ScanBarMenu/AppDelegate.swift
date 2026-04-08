@@ -17,8 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let panelController = BarcodePanelController()
         self.barcodePanelController = panelController
 
-        let monitor = ClipboardMonitor { [weak panelController] text in
-            panelController?.showBarcode(text)
+        let monitor = ClipboardMonitor { [weak panelController] text, pattern in
+            panelController?.showBarcode(text, matchedPattern: pattern)
         }
         self.clipboardMonitor = monitor
         monitor.start()

@@ -11,10 +11,10 @@ final class ClipboardMonitor {
     private var lastChangeCount: Int
     private var timer: Timer?
     private let interval: TimeInterval = 0.5
-    private let onClipboardChange: (String) -> Void
+    private let onClipboardChange: (String, BarcodePattern) -> Void
     private let barcodeDetector = BarcodeDetector()
 
-    init(onClipboardChange: @escaping (String) -> Void) {
+    init(onClipboardChange: @escaping (String, BarcodePattern) -> Void) {
         self.onClipboardChange = onClipboardChange
         self.lastChangeCount = pasteboard.changeCount
     }
@@ -40,8 +40,8 @@ final class ClipboardMonitor {
         guard let string = pasteboard.string(forType: .string) else { return }
         guard !string.isEmpty else { return }
 
-        if barcodeDetector.isPotentialBarcode(string) {
-            onClipboardChange(string)
+        if let matched = barcodeDetector.matchingPattern(for: string) {
+            onClipboardChange(string, matched)
         }
     }
 }

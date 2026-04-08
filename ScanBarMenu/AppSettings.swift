@@ -44,7 +44,8 @@ final class AppSettings: ObservableObject {
     private enum Keys {
         static let format = "barcodeFormat"
         static let width = "barcodeWidth"
-        static let maxCharacterCount = "maxCharacterCount"
+        static let patterns = "barcodePatterns"
+        static let maxCharacterCountLegacy = "maxCharacterCount"
         static let panelOriginX = "panelOriginX"
         static let panelOriginY = "panelOriginY"
         static let saveFolderBookmark = "saveFolderBookmark"
@@ -63,9 +64,9 @@ final class AppSettings: ObservableObject {
         }
     }
 
-    @Published var maxCharacterCount: Int {
+    @Published var patterns: [BarcodePattern] {
         didSet {
-            defaults.set(maxCharacterCount, forKey: Keys.maxCharacterCount)
+            persistPatterns()
         }
     }
 
@@ -120,7 +121,64 @@ final class AppSettings: ObservableObject {
         let storedWidth = UserDefaults.standard.double(forKey: Keys.width)
         self.width = storedWidth > 0 ? CGFloat(storedWidth) : 900
 
-        let storedMax = UserDefaults.standard.integer(forKey: Keys.maxCharacterCount)
-        self.maxCharacterCount = storedMax > 0 ? storedMax : 48
+        let ud = UserDefaults.standard
+        let (loaded, needsPersist) = Self.loadPatterns(from: ud)
+        self.patterns = loaded
+        if needsPersist {
+            persistPatterns()
+        }
+    }
+
+    private func persistPatterns() {
+        if let data = try? JSONEncoder().encode(patterns) {
+            defaults.set(data, forKey: Keys.patterns)
+        }
+    }
+
+    /// - Returns: motifs à utiliser, et si les réglages doivent être réécrits (première install, migration ou données invalides).
+    private static func loadPatterns(from defaults: UserDefaults) -> ([BarcodePattern], Bool) {
+        if let data = defaults.data(forKey: Keys.patterns),
+           let decoded = try? JSONDecoder().decode([BarcodePattern].self, from: data),
+           !decoded.isEmpty {
+            return (decoded, false)
+        }
+        let legacyMax = defaults.integer(forKey: Keys.maxCharacterCountLegacy)
+        let limit = legacyMax > 0 ? min(legacyMax, 500) : 48
+        return ([BarcodePattern(name: String(localized: "Global"), regex: "^.{1,\(limit)}$")], true)
+    }
+
+    func movePattern(id: UUID, direction: Int) {
+        var next = patterns
+        guard let index = next.firstIndex(where: { $0.id == id }) else { return }
+        let newIndex = index + direction
+        guard newIndex >= 0, newIndex < next.count else { return }
+        next.swapAt(index, newIndex)
+        patterns = next
+    }
+
+    func addPattern() {
+        patterns.append(
+            BarcodePattern(
+                name: String(localized: "New pattern"),
+                regex: "^.{1,80}$"
+            )
+        )
+    }
+
+    func removePatterns(at offsets: IndexSet) {
+        var next = patterns
+        next.remove(atOffsets: offsets)
+        if next.isEmpty {
+            next = [BarcodePattern(name: String(localized: "Global"), regex: "^.{1,80}$")]
+        }
+        patterns = next
+    }
+
+    func updatePattern(id: UUID, name: String? = nil, regex: String? = nil) {
+        var next = patterns
+        guard let i = next.firstIndex(where: { $0.id == id }) else { return }
+        if let name { next[i].name = name }
+        if let regex { next[i].regex = regex }
+        patterns = next
     }
 }

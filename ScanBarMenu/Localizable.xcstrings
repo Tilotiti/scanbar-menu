@@ -226,6 +226,166 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Mac" } }
       }
     },
+    "Add pattern" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Muster hinzufügen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Añadir patrón" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ajouter un motif" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Aggiungi modello" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "パターンを追加" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "添加模式" } }
+      }
+    },
+    "Also matches:" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Trifft auch zu:" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "También coincide:" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Correspond aussi :" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Corrisponde anche:" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "他にも一致:" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "还匹配：" } }
+      }
+    },
+    "Clipboard patterns" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Zwischenablage-Muster" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Patrones del portapapeles" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Motifs du presse-papiers" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Modelli appunti" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "クリップボードのパターン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "剪贴板模式" } }
+      }
+    },
+    "Enter a reference to test." : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Geben Sie eine Referenz zum Testen ein." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Introduzca una referencia para probar." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Saisissez une référence à tester." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Inserisci un riferimento da provare." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テストする参照を入力してください。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "输入要测试的参考文本。" } }
+      }
+    },
+    "First matching pattern:" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Erstes passendes Muster:" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Primer patrón que coincide:" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Premier motif correspondant :" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Primo modello corrispondente:" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "最初に一致したパターン:" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "首个匹配模式：" } }
+      }
+    },
+    "Global" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Global" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Global" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Global" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Globale" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "グローバル" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全局" } }
+      }
+    },
+    "Invalid regular expression" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Ungültiger regulärer Ausdruck" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Expresión regular no válida" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Expression régulière invalide" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Espressione regolare non valida" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "無効な正規表現" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正则表达式无效" } }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Name" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nombre" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Nom" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Nome" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "名前" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "名称" } }
+      }
+    },
+    "New pattern" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Neues Muster" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nuevo patrón" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Nouveau motif" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Nuovo modello" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新しいパターン" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新模式" } }
+      }
+    },
+    "No pattern matches this reference." : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kein Muster passt zu dieser Referenz." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ningún patrón coincide con esta referencia." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun motif ne correspond à cette référence." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Nessun modello corrisponde a questo riferimento." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "どのパターンにも一致しません。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "没有模式匹配此参考文本。" } }
+      }
+    },
+    "No patterns configured." : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Keine Muster konfiguriert." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No hay patrones configurados." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun motif configuré." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Nessun modello configurato." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "パターンが設定されていません。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未配置任何模式。" } }
+      }
+    },
+    "Patterns are tested top to bottom; the first match is used. The whole copied text (trimmed) must match the regex. Example: ^[0-9A-Z]{8,20}$" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Muster werden von oben nach unten geprüft; das erste Treffer zählt. Der gesamte kopierte Text (getrimmt) muss zur Regex passen. Beispiel: ^[0-9A-Z]{8,20}$" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Los patrones se prueban de arriba abajo; se usa el primero que coincida. Todo el texto copiado (sin espacios al inicio/fin) debe coincidir con la expresión regular. Ejemplo: ^[0-9A-Z]{8,20}$" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les motifs sont testés de haut en bas ; le premier qui correspond est utilisé. Tout le texte copié (sans espaces en bordure) doit correspondre à la regex. Exemple : ^[0-9A-Z]{8,20}$" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "I modelli sono provati dall’alto in basso; vale il primo che corrisponde. Tutto il testo copiato (senza spazi ai bordi) deve corrispondere alla regex. Esempio: ^[0-9A-Z]{8,20}$" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "上から順に試し、最初に一致したパターンが使われます。コピーした全文（前後の空白を除く）が正規表現に一致する必要があります。例: ^[0-9A-Z]{8,20}$" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "从上到下测试模式，使用第一个匹配的。复制的全文（去除首尾空格）须与正则表达式完全匹配。示例：^[0-9A-Z]{8,20}$" } }
+      }
+    },
+    "Reference to test" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Zu testende Referenz" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Referencia de prueba" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Référence à tester" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Riferimento di prova" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テストする参照" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "要测试的参考文本" } }
+      }
+    },
+    "Regular expression" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Regulärer Ausdruck" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Expresión regular" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Expression régulière" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Espressione regolare" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "正規表現" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正则表达式" } }
+      }
+    },
+    "Shows which pattern matches first and all other matching patterns." : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Zeigt, welches Muster zuerst passt, und alle weiteren passenden Muster." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Muestra qué patrón coincide primero y los demás que también coinciden." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Indique le premier motif qui correspond et les autres motifs qui correspondent aussi." } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Mostra quale modello corrisponde per primo e tutti gli altri che corrispondono." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "最初に一致したパターンと、他に一致するパターンを表示します。" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示首先匹配的模式以及所有其他匹配的模式。" } }
+      }
+    },
+    "Test a reference" : {
+      "localizations" : {
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Referenz testen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Probar una referencia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tester une référence" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Prova un riferimento" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "参照をテスト" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "测试参考文本" } }
+      }
+    },
     "Max character limit" : {
       "localizations" : {
         "de" : { "stringUnit" : { "state" : "translated", "value" : "Maximale Zeichenanzahl" } },

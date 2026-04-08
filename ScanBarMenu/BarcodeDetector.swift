@@ -6,10 +6,13 @@
 import Foundation
 
 struct BarcodeDetector {
-    /// Vérifie si le texte est potentiellement un code-barres (longueur ≤ limite configurée).
+    /// Vérifie si le texte correspond à au moins un motif configuré.
     func isPotentialBarcode(_ text: String) -> Bool {
-        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        let limit = AppSettings.shared.maxCharacterCount
-        return !trimmed.isEmpty && trimmed.count <= limit
+        ClipboardPatternMatcher.firstMatchingPattern(for: text, in: AppSettings.shared.patterns) != nil
+    }
+
+    /// Motif reconnu pour ce texte, si applicable.
+    func matchingPattern(for text: String) -> BarcodePattern? {
+        ClipboardPatternMatcher.firstMatchingPattern(for: text, in: AppSettings.shared.patterns)
     }
 }

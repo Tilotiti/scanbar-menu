@@ -20,7 +20,7 @@ struct ScanBarMenuApp: App {
 
         Window(String(localized: "Configuration"), id: "settings") {
             SettingsView(settings: AppSettings.shared)
-                .frame(minWidth: 400, minHeight: 380)
+                .frame(minWidth: 440, minHeight: 520)
                 .overlay(
                     HostingWindowAccessor { window in
                         HostingWindowStore.shared.settingsWindow = window
@@ -30,7 +30,7 @@ struct ScanBarMenuApp: App {
                 )
         }
         .windowResizability(.contentSize)
-        .defaultSize(width: 400, height: 380)
+        .defaultSize(width: 440, height: 520)
         .defaultPosition(.center)
 
         Window(String(localized: "About"), id: "about") {

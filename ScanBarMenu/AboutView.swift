@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct AboutView: View {
-    private static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.3.1"
+    private static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.4.0"
 
     private static let licenseText = """
     Copyright (c) 2026 Thibault Henry

@@ -26,6 +26,7 @@ private final class WindowDragHostView: NSView {
 
 struct BarcodePanelView: View {
     let value: String
+    let matchedPatternName: String
     @ObservedObject var settings: AppSettings
     let onClose: () -> Void
     var onWidthChange: ((CGFloat) -> Void)? = nil
@@ -79,6 +80,14 @@ struct BarcodePanelView: View {
                             .padding(.vertical, 4)
                             .background(.quaternary.opacity(0.8), in: Capsule())
 
+                        Text(matchedPatternName)
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(.quaternary.opacity(0.8), in: Capsule())
+
                         Text(value)
                             .font(.system(.subheadline, design: .monospaced))
                             .lineLimit(1)
@@ -111,8 +120,8 @@ struct BarcodePanelView: View {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
                     let dateString = formatter.string(from: Date())
-                    let formatSlug = settings.format.rawValue.lowercased().replacingOccurrences(of: " ", with: "-")
-                    let suggestedName = "\(formatSlug)_\(dateString).png"
+                    let patternSlug = Self.filenameSlug(from: matchedPatternName)
+                    let suggestedName = "\(patternSlug)_\(dateString).png"
                     onDownloadRequested?(image, suggestedName) { success in
                         if success {
                             showSuccess(.download)
@@ -174,6 +183,14 @@ struct BarcodePanelView: View {
         .buttonStyle(.plain)
     }
 
+    /// Slug sûr pour un nom de fichier (a-z, 0-9, tirets ; accents supprimés).
+    private static func filenameSlug(from patternName: String) -> String {
+        let folded = patternName.folding(options: .diacriticInsensitive, locale: .current).lowercased()
+        let parts = folded.components(separatedBy: CharacterSet.alphanumerics.inverted).filter { !$0.isEmpty }
+        let slug = parts.joined(separator: "-")
+        return slug.isEmpty ? "pattern" : slug
+    }
+
     private func showSuccess(_ action: SuccessAction) {
         lastSuccessAction = action
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -229,6 +246,11 @@ struct BarcodePanelView: View {
 }
 
 #Preview {
-    BarcodePanelView(value: "1234567890128", settings: AppSettings.shared, onClose: {})
-        .frame(width: 320, height: 120)
+    BarcodePanelView(
+        value: "1234567890128",
+        matchedPatternName: String(localized: "Global"),
+        settings: AppSettings.shared,
+        onClose: {}
+    )
+    .frame(width: 320, height: 120)
 }

@@ -10,13 +10,18 @@ import UniformTypeIdentifiers
 struct SettingsView: View {
     @ObservedObject var settings: AppSettings
     @State private var showFolderPicker = false
+    @State private var testReference: String = ""
 
     private static let widthRange: ClosedRange<CGFloat> = 200 ... 1200
     private static let widthStep: CGFloat = 50
-    private static let maxCharsRange = 10 ... 500
-    private static let maxCharsStep = 5
 
     var body: some View {
+        NavigationStack {
+            formContent
+        }
+    }
+
+    private var formContent: some View {
         Form {
             // Dossier d'enregistrement
             Section {
@@ -84,29 +89,37 @@ struct SettingsView: View {
                 Text(String(localized: "Width (px)"))
             }
 
-            // Limite de caractères
             Section {
-                HStack {
-                    Slider(
-                        value: Binding(
-                            get: { Double(settings.maxCharacterCount) },
-                            set: {
-                                let value = Int($0.rounded())
-                                settings.maxCharacterCount = min(max(value, Self.maxCharsRange.lowerBound), Self.maxCharsRange.upperBound)
-                            }
-                        ),
-                        in: Double(Self.maxCharsRange.lowerBound) ... Double(Self.maxCharsRange.upperBound),
-                        step: Double(Self.maxCharsStep)
-                    )
-                    Text("\(settings.maxCharacterCount)")
-                        .font(.body.monospacedDigit())
-                        .foregroundStyle(.secondary)
-                        .frame(width: 40, alignment: .trailing)
+                ForEach(settings.patterns) { pattern in
+                    patternRow(pattern)
+                }
+
+                Button {
+                    settings.addPattern()
+                } label: {
+                    Label(String(localized: "Add pattern"), systemImage: "plus.circle.fill")
                 }
             } header: {
-                Text(String(localized: "Max character limit"))
+                Text(String(localized: "Clipboard patterns"))
             } footer: {
-                Text(String(localized: "Max recommended for \(settings.format.rawValue): \(settings.format.recommendedMaxLength)"))
+                Text(String(localized: "Patterns are tested top to bottom; the first match is used. The whole copied text (trimmed) must match the regex. Example: ^[0-9A-Z]{8,20}$"))
+            }
+
+            Section {
+                TextField(String(localized: "Reference to test"), text: $testReference)
+                    .textFieldStyle(.roundedBorder)
+                    .font(.system(.body, design: .monospaced))
+
+                Group {
+                    Text(patternTestSummary)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            } header: {
+                Text(String(localized: "Test a reference"))
+            } footer: {
+                Text(String(localized: "Shows which pattern matches first and all other matching patterns."))
             }
         }
         .formStyle(.grouped)
@@ -137,6 +150,85 @@ struct SettingsView: View {
                 }
             }
         }
+    }
+
+    private var patternTestSummary: String {
+        let trimmed = testReference.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.isEmpty {
+            return String(localized: "Enter a reference to test.")
+        }
+        if settings.patterns.isEmpty {
+            return String(localized: "No patterns configured.")
+        }
+        guard let first = ClipboardPatternMatcher.firstMatchingPattern(for: trimmed, in: settings.patterns) else {
+            return String(localized: "No pattern matches this reference.")
+        }
+        let all = ClipboardPatternMatcher.allMatchingPatterns(for: trimmed, in: settings.patterns)
+        let firstPart = String(localized: "First matching pattern:") + " " + first.name
+        let others = all.filter { $0.id != first.id }
+        if others.isEmpty {
+            return firstPart
+        }
+        let names = others.map(\.name).joined(separator: ", ")
+        return firstPart + "\n" + String(localized: "Also matches:") + " " + names
+    }
+
+    private func patternRow(_ pattern: BarcodePattern) -> some View {
+        let index = settings.patterns.firstIndex(where: { $0.id == pattern.id }) ?? 0
+        let count = settings.patterns.count
+        return HStack(alignment: .top, spacing: 10) {
+            VStack(alignment: .leading, spacing: 8) {
+                TextField(String(localized: "Name"), text: Binding(
+                    get: { settings.patterns.first { $0.id == pattern.id }?.name ?? "" },
+                    set: { settings.updatePattern(id: pattern.id, name: $0) }
+                ))
+                TextField(String(localized: "Regular expression"), text: Binding(
+                    get: { settings.patterns.first { $0.id == pattern.id }?.regex ?? "" },
+                    set: { settings.updatePattern(id: pattern.id, regex: $0) }
+                ))
+                .font(.system(.body, design: .monospaced))
+
+                if let live = settings.patterns.first(where: { $0.id == pattern.id }) {
+                    if !live.regex.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+                       !ClipboardPatternMatcher.isValidRegex(live.regex) {
+                        Text(String(localized: "Invalid regular expression"))
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            VStack(spacing: 2) {
+                Button {
+                    settings.movePattern(id: pattern.id, direction: -1)
+                } label: {
+                    Image(systemName: "chevron.up")
+                }
+                .buttonStyle(.borderless)
+                .disabled(index == 0)
+
+                Button {
+                    settings.movePattern(id: pattern.id, direction: 1)
+                } label: {
+                    Image(systemName: "chevron.down")
+                }
+                .buttonStyle(.borderless)
+                .disabled(index >= count - 1)
+
+                Button(role: .destructive) {
+                    if let idx = settings.patterns.firstIndex(where: { $0.id == pattern.id }) {
+                        settings.removePatterns(at: IndexSet(integer: idx))
+                    }
+                } label: {
+                    Image(systemName: "trash")
+                }
+                .buttonStyle(.borderless)
+                .disabled(count <= 1)
+            }
+            .foregroundStyle(.secondary)
+        }
+        .padding(.vertical, 4)
     }
 
 }

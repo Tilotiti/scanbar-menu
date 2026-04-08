@@ -11,9 +11,10 @@ final class BarcodePanelController: NSObject, NSWindowDelegate {
     private var panel: NSPanel?
     private var hostingView: NSHostingView<BarcodePanelView>?
     private var currentValue: String = ""
+    private var currentPatternId: UUID?
     private var clickMonitor: Any?
 
-    func showBarcode(_ value: String) {
+    func showBarcode(_ value: String, matchedPattern: BarcodePattern) {
         let settings = AppSettings.shared
         guard BarcodeGenerator.generate(
             from: value,
@@ -23,10 +24,12 @@ final class BarcodePanelController: NSObject, NSWindowDelegate {
         ) != nil else { return }
 
         if let panel = panel, panel.isVisible {
-            guard value != currentValue else { return }
+            if value == currentValue, currentPatternId == matchedPattern.id { return }
             currentValue = value
+            currentPatternId = matchedPattern.id
             hostingView?.rootView = BarcodePanelView(
                 value: value,
+                matchedPatternName: matchedPattern.name,
                 settings: AppSettings.shared,
                 onClose: { [weak self] in self?.hide() },
                 onWidthChange: { [weak self] _ in self?.resizePanelToFitContent() },
@@ -37,7 +40,8 @@ final class BarcodePanelController: NSObject, NSWindowDelegate {
             panel.orderFrontRegardless()
         } else {
             currentValue = value
-            createAndShowPanel(value: value)
+            currentPatternId = matchedPattern.id
+            createAndShowPanel(value: value, matchedPatternName: matchedPattern.name)
         }
     }
 
@@ -66,9 +70,10 @@ final class BarcodePanelController: NSObject, NSWindowDelegate {
         }
     }
 
-    private func createAndShowPanel(value: String) {
+    private func createAndShowPanel(value: String, matchedPatternName: String) {
         let contentView = BarcodePanelView(
             value: value,
+            matchedPatternName: matchedPatternName,
             settings: AppSettings.shared,
             onClose: { [weak self] in self?.hide() },
             onWidthChange: { [weak self] _ in self?.resizePanelToFitContent() },
